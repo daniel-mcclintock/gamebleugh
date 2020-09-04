@@ -2,6 +2,13 @@
 #include "decode.h"
 #include "mmu.h"
 
+/*
+  Initially it wasn't so bad having these Args encapsulated into their own
+  little handler structs, but now its just getting messy and it makes writing
+  the individual Ops more complicated. I think this should be revised.
+  Theres way to much cognitive overhead for each Op and each Argument type
+*/
+
 /* cpu registers 8-bit */
 u_int8_t *fetch_A() { return &cpu.registers.A; }
 void write_A(u_int8_t *value) { cpu.registers.A = *value & 255; }
