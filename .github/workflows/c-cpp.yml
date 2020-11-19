@@ -9,6 +9,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: prep
     - name: make
       run: make
